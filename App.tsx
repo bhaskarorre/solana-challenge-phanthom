@@ -101,8 +101,9 @@ function App() {
     if (solana) {
       try {
 				// connects wallet and returns response which includes the wallet public key
-        const response = await solana.connect();
-        console.log('wallet account ', response.publicKey.toString());
+        await solana.disconnect();
+	console.log('wallet disconnected')
+        //console.log('wallet account ', response.publicKey.toString());
 				// update walletKey to be the public key
         setWalletKey(undefined);
         setProvider(undefined);
